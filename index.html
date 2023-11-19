@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  
+  <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6LdBaRQpAAAAAK6EeakE3kbcEsv8wTIHV6lPKZwM"></script>
+  
+</head>
+
+<body class="flex flex-col min-h-screen bg-gray-950 text-gray-100">
+  <div class="flex-grow container max-w-4xl mx-auto w-5/6 px-4 py-8">
+    <img class="mx-auto w-60 my-48" src="/assets/img/neon@5x.png">
+<form class="mx-auto my-4 p-3 rounded-md bg-gray-950" action="https://getform.io/f/f2a0e8ce-e465-4f7a-bd96-220da551a71b"
+  method="POST">
+  <p class="uppercase text-center text-2xl font-extralight mb-3">Join our mailing list</p>
+  <p class="text-center font-extralight mb-3">Sign up with your email address to receive news and updates.</p>
+  <div class="flex space-x-2 justify-center">
+    <input type="hidden" id="captchaResponse" name="g-recaptcha-response">
+    <input required type="email" name="email"
+      class="w-60 my-2 p-2 rounded-md shadow-inner shadow-gray-600 text-gray-950" placeholder="Email">
+    <input type="hidden" name="_gotcha" style="display:none !important">
+    <!-- <input type="submit" class="my-2 p-2 rounded-md bg-[#5CE1E6] text-gray-950" value="Submit"> -->
+    <input type="submit" class="my-2 p-2 rounded-md border-[#5CE1E6] border-2 text-gray-100" value="Submit">
+  </div>
+  <div class="flex space-x-2 justify-center">
+    <input required type="checkbox" name="consent" value="Yes" class="my-2 p-2 rounded-md bg-[#5CE1E6] text-gray-950">
+    <label for="consent" class="text-gray-400 font-extralight">I agree to receive emails from Neon Networks.</label>
+  </div>
+</form>
+
+<script>
+  grecaptcha.ready(function () {
+    grecaptcha.execute('6LdBaRQpAAAAAK6EeakE3kbcEsv8wTIHV6lPKZwM', { action: 'homepage' })
+      .then(function (token) {
+        document.getElementById('captchaResponse').value = token;
+      });
+  });
+</script>
+  </div>
+
+  <footer class="bg-gray-900 border-t-2 border-gray-800  text-white">
+    <div class="flex justify-between items-stretch mx-auto p-4 max-w-4xl w-full">
+      <div class="flex flex-col">
+        <p class="my-4">&copy; 2023 Neon Networks, Inc.</p>
+      </div>
+      <div class="flex flex-col text-right">
+        <a href="/blog">Blog</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="mailto:hello@neonnetworks.io">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
